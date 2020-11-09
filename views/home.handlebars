@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+
+<style type="text/css">
+    .page-center {
+        margin-top: 30px;
+
+    }
+
+    .input-group {
+        flex-wrap: nowrap;
+    }
+
+    .input-group {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .input-group {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        width: 100%;
+    }
+
+
+
+    .btn {
+        display: inline-block;
+        font-weight: 400;
+        color: #212529;
+        text-align: center;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        user-select: none;
+        background-color: transparent;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        border-color: #007bff;
+    }
+    .card-body: {
+         font-size: 9px;
+    }
+</style>
+
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+    <center>
+        <div class="page-center ">
+            <div class="row mb-3">
+                <div class="col-3">
+
+                </div>
+                <div class="col-6">
+                    <div class="input-group">
+                        <div class="search"><input autocomplete="off" id="searchString" type="text" id="search-box"
+                                class="form-control rounded-0" placeholder="What are you looking for?" value="">
+                            <div></div>
+                        </div>
+
+                        <div class="input-group-btn "><button class="btn button-primary" onClick="{{searchHandler(this.searchString}}" type="submit">Search</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{!-- {{#if (documents.length > 0)}} --}}
+            <div class="row mb-3">
+                {{#each documents}}
+                <div class="col-4 card">
+                    {{!-- <img src="{{this.avatar}}"> --}}
+                    <div class="card-heading">
+                        {{this.agency}}
+                    </div>
+                    <div class="card-body " >
+                        Salary Range: <p>{{this.salary_range_from}} - {{this.salary_range_to}}</p>
+                        Business title: <p>{{this.business_title}}</p>
+                         {{!-- Job description: <p>{{this.job_description}}</p> --}}
+                    </div>
+                    <div class="card-footer " >
+                        <button  class="btn btn-primary"><a href="/job/{{this.id}}">View Details</a></button>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{!-- {{/if}} --}}
+
+            {{!-- <div class="pagination pagination-centered">
+                <ul>
+                    {{#paginate pagination type="first"}}
+                    <li {{#if disabled}}class="disabled" {{/if}}><a href="?p={{n}}">First</a></li>
+                    {{/paginate}}
+                    {{#paginate pagination type="previous"}}
+                    <li {{#if disabled}}class="disabled" {{/if}}><a href="?p={{n}}">Prev</a></li>
+                    {{/paginate}}
+                    {{#paginate pagination type="middle" limit="7"}}
+                    <li {{#if active}}class="active" {{/if}}><a href="?p={{n}}">{{n}}</a></li>
+                    {{/paginate}}
+                    {{#paginate pagination type="next"}}
+                    <li {{#if disabled}}class="disabled" {{/if}}><a href="?p={{n}}">Next</a></li>
+                    {{/paginate}}
+                    {{#paginate pagination type="last"}}
+                    <li {{#if disabled}}class="disabled" {{/if}}><a href="?p={{n}}">Last</a></li>
+                    {{/paginate}}
+                </ul>
+            </div> --}}
+        </div>
+       
+    </center>
+</body>
+
+</html>
