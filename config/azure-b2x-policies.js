@@ -5,22 +5,22 @@
  */
 const b2cPolicies = {
     names: {
-        signUpSignIn: "B2C_1_susi",
-        resetPassword: "B2C_1_reset",
+        signUpSignIn: "B2C_1_benzeen",
+        resetPassword: "B2C_1_benzeen_reset_password",
         // editProfile: "B2C_1_edit_profile"
     },
     authorities: {
         signUpSignIn: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/B2C_1_susi",
+            authority: "https://benzeenb2c.b2clogin.com/tfp/benzeenb2c.onmicrosoft.com/B2C_1_benzeen",
         },
         resetPassword: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/B2C_1_reset",
+            authority: "https://benzeenb2c.b2clogin.com/tfp/benzeenb2c.onmicrosoft.com/B2C_1_benzeen_reset_password",
         },
         // editProfile: {
         //     authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/B2C_1_edit_profile"
         // }
     },
-    authorityDomain: "fabrikamb2c.b2clogin.com"
+    authorityDomain: "benzeenb2c.b2clogin.com"
 }
 
 module.exports = b2cPolicies;

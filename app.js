@@ -14,11 +14,11 @@ const policies = require("./config/azure-b2x-policies");
  */
 const confidentialClientConfig = {
   auth: {
-      clientId: "e6e1bea3-d98f-4850-ba28-e80ed613cc72", 
+      clientId: "477b6c1e-3cee-4892-b9a0-ad6c2afae693", 
       authority: policies.authorities.signUpSignIn.authority, 
-      clientSecret: "wr7Q9R~Gg1Qb9l.3s4Dg8jp7Z6.9M~42K0",
+      clientSecret: "6MrX_Ao~BchiMVP838_i1FF_-B--N78N5d",
       knownAuthorities: [policies.authorityDomain], 
-      redirectUri: "http://localhost:4200/home",
+      redirectUri: "http://localhost:4200",
   },
   system: {
       loggerOptions: {
@@ -103,7 +103,8 @@ const getAuthCode = (authority, scopes, state, res) => {
   // request an authorization code to exchange for a token
   return cca.getAuthCodeUrl(authCodeRequest)
       .then((response) => {
-          res.redirect(response);
+        console.log('response',response);
+        res.redirect(response);
       })
       .catch((error) => {
           res.status(500).send(error);
@@ -221,5 +222,5 @@ app.get('/job/:id', (req, res, next) => routeJobs(req, res, next))
 
  
 app.listen(4200, () => {
-  console.log('The web server has started on port 3000');
+  console.log('The web server has started on port 4200');
 });
